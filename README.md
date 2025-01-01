@@ -1,1 +1,3 @@
 # notion_to_docs
+
+I was facing the problem of not being able to download those notion pages which have any image in it, so i made this solution using the notion api and google docs and drive api, i copied the data from the notion page to a google docs page and now i will download the file as pdf from there...
