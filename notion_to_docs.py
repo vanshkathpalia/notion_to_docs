@@ -7,9 +7,11 @@ from googleapiclient.http import MediaFileUpload
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from notion_client import Client
+from dotenv import load_dotenv
 
 # Setup Notion Client
-notion = Client(auth="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")  # Replace with your Notion API key
+load_dotenv()
+notion = Client(auth=os.getenv("NOTION_API_KEY")) # Replace with your Notion API key
 
 # Google Docs and Drive API Scopes
 SCOPES = [
