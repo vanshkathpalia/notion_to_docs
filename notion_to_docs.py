@@ -25,14 +25,14 @@ def authenticate_google():
     """Authenticate and return Google services."""
     creds = None
     if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        creds = Credentials.from_authorized_user_file('./files_required/token.json', SCOPES)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file('./files_required/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
-            with open('token.json', 'w') as token:
+            with open('./files_required/token.json', 'w') as token:
                 token.write(creds.to_json())
     
     # Build and return the services
@@ -161,8 +161,13 @@ def create_google_doc(title, content):
 
 
 # Replace with your Notion page ID and desired Google Doc title
+<<<<<<< HEAD
 NOTION_PAGE_ID = "Enter your notion page id"  # Replace with your Notion page ID
 GOOGLE_DOC_TITLE = "My Notion Notes"
+=======
+NOTION_PAGE_ID = "13934f6b27ca806cb00de4130ce7d8f1"  # Replace with your Notion page ID
+GOOGLE_DOC_TITLE = "My Notion ji"
+>>>>>>> d062cfb (features still to be added)
 
 notion_content = fetch_notion_content(NOTION_PAGE_ID)
 create_google_doc(GOOGLE_DOC_TITLE, notion_content)
