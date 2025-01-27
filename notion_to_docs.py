@@ -161,7 +161,7 @@ def create_google_doc(title, content):
 
 
 # Replace with your Notion page ID and desired Google Doc title
-NOTION_PAGE_ID = "15034f6b27ca80b98e42f21a5b801daf"  # Replace with your Notion page ID
+NOTION_PAGE_ID = "Enter your notion page id"  # Replace with your Notion page ID
 GOOGLE_DOC_TITLE = "My Notion Notes"
 
 notion_content = fetch_notion_content(NOTION_PAGE_ID)
